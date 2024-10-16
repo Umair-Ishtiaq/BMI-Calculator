@@ -1,0 +1,53 @@
+<div class="home container">
+    <h1>Welcome to the BMI Calculator</h1>
+    <p>Use this tool to calculate your Body Mass Index (BMI).</p>
+
+    <div class="card mt-4">
+        <div class="card-body">
+            <h5 class="card-title">Calculate Your BMI</h5>
+            <form (ngSubmit)="calculateBMI()">
+                <div class="mb-3">
+                    <label for="gender" class="form-label">Select Gender</label>
+                    <select id="gender" [(ngModel)]="gender" name="gend" class="form-select" required>
+                        <option value="" disabled selected>Select your gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>                
+                <div class="mb-3">
+                    <label for="age" class="form-label">Enter Age</label>
+                    <input type="number" class="form-control" [(ngModel)]="age" name="age" id="age" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="weight" class="form-label">Enter Weight (kg)</label>
+                    <input type="number" class="form-control" [(ngModel)]="weight" name="weight" id="weight" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="height" class="form-label">Enter Height (cm)</label>
+                    <input type="number" class="form-control" [(ngModel)]="height" name="height" id="height" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Calculate</button>
+            </form>
+            
+            <div *ngIf="bmi !== null" class="mt-3">
+                <h3>Your BMI is: {{ bmi.toFixed(2) }}</h3>
+                <div *ngIf="gender === 'male'">
+                    <p *ngIf="bmi < 20">You are Underweight.</p>
+                    <p *ngIf="bmi >= 20 && bmi < 25">You have a Normal weight.</p>
+                    <p *ngIf="bmi >= 25 && bmi < 30">You are Overweight.</p>
+                    <p *ngIf="bmi >= 30">You are Obese.</p>
+                </div>
+                <div *ngIf="gender === 'female'">
+                    <p *ngIf="bmi < 18.5">You are Underweight.</p>
+                    <p *ngIf="bmi >= 18.5 && bmi < 24.9">You have a Normal weight.</p>
+                    <p *ngIf="bmi >= 25 && bmi < 29.9">You are Overweight.</p>
+                    <p *ngIf="bmi >= 30">You are Obese.</p>
+                </div>    
+            </div>
+
+        </div>
+    </div>
+</div>

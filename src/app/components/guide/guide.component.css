@@ -1,0 +1,14 @@
+.guide {
+    margin-top: 5em;
+}
+img{
+    margin-left: 60px;
+    position: absolute;
+}
+
+@media (max-width: 576px){
+    img{
+        position: fixed;
+        height: 50%;
+    }
+}

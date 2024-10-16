@@ -1,0 +1,28 @@
+img{
+    margin-left: 3em;
+    position: relative;
+}
+ul{
+    font-size: 30px;
+    margin-right: 3em;
+}
+li {
+    transition: all 0.5s ease; /* Transition for all properties */
+}
+
+li:hover {
+    font-weight: bold; 
+    text-decoration: underline;
+    text-shadow: 0 0 5px rgba(78, 248, 225, 0.8), 0 0 10px rgba(255, 255, 0, 0.5); /* Glow effect */
+}
+@media (max-width: 576px){
+    img{
+        padding-top: 5px;
+        margin-left: 0;
+        height: 50px;
+    }
+    ul{
+        font-size: 15px;
+        margin-right: 0em;
+    }
+}

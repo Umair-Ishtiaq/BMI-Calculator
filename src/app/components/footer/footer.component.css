@@ -1,0 +1,22 @@
+.footer {
+    padding: 20px 0;
+    color: white;
+    background-color: #343a40;
+  }
+  
+  .footer h5 {
+    margin-bottom: 15px;
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+  
+  .footer a {
+    font-size: 1.5em;
+  }
+  
+  .footer .text-center {
+    margin-top: 10px;
+  }
+  
